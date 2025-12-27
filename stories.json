@@ -1,0 +1,66 @@
+{
+    "language": "English",
+    "source": "Public Domain",
+    "stories": [
+        {
+            "story_id": "s1",
+            "title": "The Tortoise and the Hare",
+            "level": "Easy",
+            "moral": "Slow and steady wins the race",
+            "text": [
+                "A hare once mocked a slow tortoise.",
+                "They decided to race each other.",
+                "The hare ran fast and fell asleep on the way.",
+                "The tortoise kept moving and won the race."
+            ]
+        },
+        {
+            "story_id": "s2",
+            "title": "The Lion and the Mouse",
+            "level": "Easy",
+            "moral": "Kindness is never wasted",
+            "text": [
+                "A lion caught a small mouse but let him go.",
+                "One day, the lion was trapped in a net.",
+                "The mouse came and gnawed the ropes.",
+                "The lion was free and thanked the mouse."
+            ]
+        },
+        {
+            "story_id": "s3",
+            "title": "The Clever Fox",
+            "level": "Easy",
+            "moral": "Presence of mind helps in danger",
+            "text": [
+                "A fox fell into a deep well.",
+                "He could not climb out.",
+                "A goat came near the well.",
+                "The fox tricked the goat and escaped."
+            ]
+        },
+        {
+            "story_id": "s4",
+            "title": "The Honest Woodcutter",
+            "level": "Easy",
+            "moral": "Honesty is rewarded",
+            "text": [
+                "A woodcutter dropped his axe into a river.",
+                "He cried because it was his only tool.",
+                "A fairy tested his honesty.",
+                "She rewarded him for telling the truth."
+            ]
+        },
+        {
+            "story_id": "s5",
+            "title": "The Monkey and the Crocodile",
+            "level": "Easy",
+            "moral": "Wisdom saves life",
+            "text": [
+                "A monkey lived on a fruit tree near a river.",
+                "A crocodile became his friend.",
+                "The crocodile planned to kill the monkey.",
+                "The monkey used his intelligence and escaped."
+            ]
+        }
+    ]
+}
