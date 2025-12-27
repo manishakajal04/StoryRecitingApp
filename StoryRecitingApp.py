@@ -26,8 +26,20 @@ if "visited" not in st.session_state:
     with open(VISIT_FILE, "w") as f:
         f.write(str(visits))
 
+# ---------- VISIT NOTIFICATION ----------
+def notify_admin(count):
+    print(f"🔔 NOTIFICATION: App reached {count} visits")
+
+# Notify only on milestones (avoid spam)
+if visits in [1, 5, 10, 25, 50, 100]:
+    notify_admin(visits)
+
+
 st.set_page_config(page_title="Story App", page_icon="📖")
-st.title("📚 Story Reciter & Word Meaning App")
+st.title("📚 Story Reciter App")
+
+st.sidebar.metric("👀 Total App Visits", visits)
+
 
 # -------- Load Stories from JSON --------
 with open("stories.json", "r") as f:
