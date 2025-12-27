@@ -4,6 +4,27 @@ import requests
 import re
 from gtts import gTTS
 import tempfile
+import os
+import streamlit as st
+
+# ---------- VISIT COUNTER ----------
+VISIT_FILE = "visits.txt"
+
+# Create file if it does not exist
+if not os.path.exists(VISIT_FILE):
+    with open(VISIT_FILE, "w") as f:
+        f.write("0")
+
+# Read existing count
+with open(VISIT_FILE, "r") as f:
+    visits = int(f.read().strip())
+
+# Count only once per user session
+if "visited" not in st.session_state:
+    visits += 1
+    st.session_state["visited"] = True
+    with open(VISIT_FILE, "w") as f:
+        f.write(str(visits))
 
 st.set_page_config(page_title="Story App", page_icon="📖")
 st.title("📚 Story Reciter & Word Meaning App")
