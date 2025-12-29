@@ -6,30 +6,30 @@ from gtts import gTTS
 import tempfile
 import os
 
-# ---------- VISIT COUNTER ----------
+# VISIT COUNTER:
 VISIT_FILE = "visits.txt"
 
-# Create file if it does not exist
+# Create file if it does not exist:
 if not os.path.exists(VISIT_FILE):
     with open(VISIT_FILE, "w") as f:
         f.write("0")
 
-# Read existing count
+# Read existing count:
 with open(VISIT_FILE, "r") as f:
     visits = int(f.read().strip())
 
-# Count only once per user session
+# Count only once per user session:
 if "visited" not in st.session_state:
     visits += 1
     st.session_state["visited"] = True
     with open(VISIT_FILE, "w") as f:
         f.write(str(visits))
 
-# ---------- VISIT NOTIFICATION ----------
+# VISIT NOTIFICATION:
 def notify_admin(count):
     print(f"🔔 NOTIFICATION: App reached {count} visits")
 
-# Notify only on milestones (avoid spam)
+# Notify only on milestones (avoid spam):
 if visits in [1, 5, 10, 25, 50, 100]:
     notify_admin(visits)
 
@@ -40,13 +40,13 @@ st.title("📚 Story Reciter App")
 st.sidebar.metric("👀 Total App Visits", visits)
 
 
-# -------- Load Stories from JSON --------
+# Load Stories from JSON File:
 with open("stories.json", "r") as f:
     data = json.load(f)
 
 stories = data["stories"]
 
-# -------- Story Selection --------
+# Story Selection:
 titles = {story["title"]: story for story in stories}
 selected_title = st.selectbox("Choose a story", titles.keys())
 selected_story = titles[selected_title]
@@ -58,7 +58,7 @@ for para in selected_story["text"]:
 
 st.caption(f"🧠 Moral: {selected_story['moral']}")
 
-# -------- Narration --------
+# Narration:
 def narrate(text):
     tts = gTTS(text)
     with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as fp:
@@ -70,7 +70,7 @@ if st.button("▶️ Play Story"):
     audio_file = narrate(full_story)
     st.audio(audio_file)
 
-# -------- Word Meaning --------
+# Word Meaning:
 st.subheader("🔍 Find Word Meaning")
 
 word = st.text_input("Enter a word from the story")
