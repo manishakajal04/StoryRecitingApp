@@ -5,7 +5,6 @@ import re
 from gtts import gTTS
 import tempfile
 import os
-import streamlit as st
 
 # ---------- VISIT COUNTER ----------
 VISIT_FILE = "visits.txt"
